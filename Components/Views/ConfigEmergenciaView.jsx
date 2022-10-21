@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button } from '@rneui/base/dist/Button';
 import { Input } from '@rneui/themed';
+import BackgroundImage from '../BackgroundImage';
 const ConfigEmergenciaView = () => {
     const [inputValueNEmergencia, setInputValueNEmergencia] = useState('') 
     const [numeroTelefonoActual, setNumeroTelefonoActual] = useState('')
@@ -34,15 +35,18 @@ const ConfigEmergenciaView = () => {
     }
 
     return (
-        <View style={styles.container}>
-            <Text>{inputValueNEmergencia}</Text>
-            <Input 
-                value={inputValueNEmergencia}
-                onChangeText={setInputValueNEmergencia}
-            />
-            <Button title='set' onPress={() => setNumeroTelefono(inputValueNEmergencia)}/>
-            <Text style={styles.telefonoActual}>Telefono Actual: {numeroTelefonoActual}</Text>
-        </View>
+        <>
+            <BackgroundImage/>
+            <View style={styles.container}>
+                <Text>{inputValueNEmergencia}</Text>
+                <Input 
+                    value={inputValueNEmergencia}
+                    onChangeText={setInputValueNEmergencia}
+                />
+                <Button title='set' onPress={() => setNumeroTelefono(inputValueNEmergencia)}/>
+                <Text style={styles.telefonoActual}>Telefono Actual: {numeroTelefonoActual}</Text>
+            </View>
+        </>
     )
 }
 

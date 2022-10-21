@@ -7,13 +7,15 @@ import BackgroundImage from '../BackgroundImage'
 const HomeView = ({}) => {
     const navigation = useNavigation()
     return(
-        <View style={styles.container}>
+        <>
             <BackgroundImage/>
-            <Button style={styles.button} title='Configurar Nro de Emergencia' onPress={() => navigation.navigate('ConfigEmergencia')}/>
-            <Button style={styles.button} title='Hora - Temperatura' onPress={() => navigation.navigate('HoraTemperatura')}/>
-            <Button style={styles.button} title='Contactos' onPress={() => navigation.navigate('Contactos')}/>
-            <Button style={styles.button} title='Cambiar Fondo' onPress={() => navigation.navigate('CambioFondo')}/>
-        </View>
+            <View style={styles.container}>
+                <Button style={styles.button} title='Configurar Nro de Emergencia' onPress={() => navigation.navigate('ConfigEmergencia')}/>
+                <Button style={styles.button} title='Hora - Temperatura' onPress={() => navigation.navigate('HoraTemperatura')}/>
+                <Button style={styles.button} title='Contactos' onPress={() => navigation.navigate('Contactos')}/>
+                <Button style={styles.button} title='Cambiar Fondo' onPress={() => navigation.navigate('CambioFondo')}/>
+            </View>
+        </>
     )
 }
 

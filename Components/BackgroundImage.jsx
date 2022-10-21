@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     background: {
         width: windowWidth,
         height: windowHeight,
-        position: 'absolute'
+        position: 'absolute',
+        opacity: .4
     }
 })

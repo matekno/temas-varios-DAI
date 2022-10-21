@@ -26,10 +26,12 @@ const ContactosView = () => {
     }, []);
 
     return (
-        <View>
+        <>
             <BackgroundImage/>
-            <FlatList data={contacto} renderItem={renderItem} keyExtractor={item => item.id} />
-        </View>
+            <View>
+                <FlatList data={contacto} renderItem={renderItem} keyExtractor={item => item.id} />
+            </View>
+        </>
     )
 }
 

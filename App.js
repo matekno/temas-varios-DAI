@@ -9,6 +9,11 @@ import CambioFondoView from './Components/Views/CambioFondoView';
 import HoraTemperaturaView from './Components/Views/HoraTemperaturaView';
 
 export default function App() {
+
+  /* colors
+    blue: #288ff7
+  */
+
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
