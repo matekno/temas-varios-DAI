@@ -5,9 +5,8 @@ import { Button } from '@rneui/base/dist/Button';
 import { Input } from '@rneui/themed';
 import BackgroundImage from '../BackgroundImage';
 const ConfigEmergenciaView = () => {
-    const [inputValueNEmergencia, setInputValueNEmergencia] = useState('') 
+    const [inputValueNEmergencia, setInputValueNEmergencia] = useState('+54 9') 
     const [numeroTelefonoActual, setNumeroTelefonoActual] = useState('')
-
     const setNumeroTelefono = (value) => {
         setNTelefono(value)
     }
@@ -16,8 +15,13 @@ const ConfigEmergenciaView = () => {
         getNTelefono()
     }, [])
 
+    function validarNumeroTelefono(num){
+        const re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+        return re.test(num)
+    }
 
     const setNTelefono = async (value) => {
+
         try {
           await AsyncStorage.setItem('numero_emergencia', value)
           console.log(value)
@@ -43,7 +47,7 @@ const ConfigEmergenciaView = () => {
                     value={inputValueNEmergencia}
                     onChangeText={setInputValueNEmergencia}
                 />
-                <Button title='set' onPress={() => setNumeroTelefono(inputValueNEmergencia)}/>
+                <Button title='Cambiar Numero' onPress={() => setNumeroTelefono(inputValueNEmergencia)}/>
                 <Text style={styles.telefonoActual}>Telefono Actual: {numeroTelefonoActual}</Text>
             </View>
         </>

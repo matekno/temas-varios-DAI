@@ -7,7 +7,7 @@ const BackgroundImage = () => {
 
   useEffect(() => {
     (async () => {
-      await AsyncStorage.getItem('bg-image').then(result => setBGImage(result))
+      await AsyncStorage.getItem('bg_image').then(result => setBGImage(result))
     })()
   }, [])
 
