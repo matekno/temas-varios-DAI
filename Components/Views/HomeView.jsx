@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View, Dimensions, Image } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Dimensions, Image, StatusBar } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Button } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
@@ -75,11 +75,14 @@ const HomeView = ({}) => {
         <>
             <BackgroundImage/>
             <View style={styles.container}>
-                <Button style={styles.button} title='Configurar Nro de Emergencia' onPress={() => navigation.navigate('ConfigEmergencia')}/>
-                <Button style={styles.button} title='Hora - Temperatura' onPress={() => navigation.navigate('HoraTemperatura')}/>
-                <Button style={styles.button} title='Contactos' onPress={() => navigation.navigate('Contactos')}/>
-                <Button style={styles.button} title='Cambiar Fondo' onPress={() => navigation.navigate('CambioFondo')}/>
+              <Button title='Configurar Nro de Emergencia' onPress={() => navigation.navigate('ConfigEmergencia')}/>
+              <Button title='Hora - Temperatura' onPress={() => navigation.navigate('HoraTemperatura')}/>
+              <Button title='Contactos' onPress={() => navigation.navigate('Contactos')}/>
+              <Button title='Cambiar Fondo' onPress={() => navigation.navigate('CambioFondo')}/>
+              <Button title='Reproductor de Video' onPress={() => navigation.navigate('ReproductorVideo')}/>
+              <Text style={{position: 'absolute', bottom: 15, right: 15, fontWeight: 'bold'}}>Movimiento: {Math.round((x+y+z) * 100) /100}</Text>
             </View>
+            <StatusBar/>
         </>
     )
 }
@@ -91,9 +94,6 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-    },
-    button: {
-        marginVertical: 10,
+      flex: 1,
     },
 })

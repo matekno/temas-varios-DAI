@@ -7,6 +7,7 @@ import ConfigEmergenciaView from './Components/Views/ConfigEmergenciaView';
 import ContactosView from './Components/Views/ContactosView';
 import CambioFondoView from './Components/Views/CambioFondoView';
 import HoraTemperaturaView from './Components/Views/HoraTemperaturaView';
+import ReproductorVideoView from './Components/Views/ReproductorVideoView';
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
           <Stack.Screen name="ConfigEmergencia" component={ConfigEmergenciaView} />
           <Stack.Screen name="Contactos" component={ContactosView} />
           <Stack.Screen name="CambioFondo" component={CambioFondoView} />
+          <Stack.Screen name="ReproductorVideo" component={ReproductorVideoView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

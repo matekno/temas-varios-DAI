@@ -58,7 +58,7 @@ const HoraTemperaturaView = () => {
                                 <Text style={{fontSize: 20}}>{locationData.name}</Text>,
                                 <Text style={{fontSize: 14}}>  {locationData.sys.country}</Text>
                             </Text>
-                            <Text style={{fontSize: 18}}>{locationData.main.temp}°C</Text>
+                            <Text style={{fontSize: 18}}>{Math.round(locationData.main.temp, -1)}°C</Text>
                         </View>
                         <Text>Min {locationData.main.temp_min}°C</Text>
                         <Text>Max {locationData.main.temp_max}°C</Text>
